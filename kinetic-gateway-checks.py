@@ -1,5 +1,6 @@
 # Kinetic Gateway Checks
 # flopach, Cisco, 2019
+# Apache License 2.0
 import requests
 import time
 
