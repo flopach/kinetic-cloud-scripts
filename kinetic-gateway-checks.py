@@ -4,10 +4,14 @@
 import requests
 import time
 
-# put in your variables
+# CONFIGURATION
+# Put here your variables:
 api_token = "xxx" #API for the Kinetic cloud
-organization_id = 0 #Insert Organization ID
+organization_id = 0 #Insert your Organization ID
 api_url_base = "https://eu.ciscokinetic.io/api/v2/" #US or EU
+api_url_base = "https://us.ciscokinetic.io/api/v2/" #US or EU
+
+#headers
 headers = {"Content-Type": "application/json",
            "Authorization": "Token {0}".format(api_token)}
 
