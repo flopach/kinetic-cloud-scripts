@@ -6,6 +6,8 @@ import time
 
 # CONFIGURATION
 # Put here your variables:
+# the API needs to have at least the following permissions:
+# Gateway Management RW, Organization Management RO
 api_token = "xxx" #API for the Kinetic cloud
 organization_id = 0 #Insert your Organization ID
 api_url_base = "https://eu.ciscokinetic.io/api/v2/" #US or EU

@@ -10,6 +10,10 @@ Basically the script has two functions:
 ## Getting Started
 
 1. Create an API token in the Kinetic Cloud and put the data in the script. You can find more in the [Kinetic documentation](https://developer.cisco.com/docs/kinetic/#!generate-api-keys/generate-api-keys).
+
+**Important**: the API needs to have at least the following permissions:
+Gateway Management => RW, Organization Management => RO
+
 2. Check your Kinetic Cloud organization ID: Login to the portal, click on the main Dashboard and in the URL you can see it:
 
 ```
