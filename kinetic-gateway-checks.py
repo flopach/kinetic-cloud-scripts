@@ -5,13 +5,13 @@ import requests
 import time
 
 # CONFIGURATION
-# Put here your variables:
+# Put here your variables.
 # the API needs to have at least the following permissions:
 # Gateway Management RW, Organization Management RO
-api_token = "xxx" #API for the Kinetic cloud
-organization_id = 0 #Insert your Organization ID
-api_url_base = "https://eu.ciscokinetic.io/api/v2/" #US or EU
-api_url_base = "https://us.ciscokinetic.io/api/v2/" #US or EU
+api_token = "token" #API for the Kinetic cloud
+organization_id = 0000 #Insert your Organization ID
+api_url_base = "https://eu.ciscokinetic.io/api/v2/" #EU or
+api_url_base = "https://us.ciscokinetic.io/api/v2/" #US
 
 #headers
 headers = {"Content-Type": "application/json",
@@ -44,8 +44,11 @@ def gatewayconnectivity():
         for x in range(len(output["gate_ways"])):
             r_gw = requests.post(api_url_base+"/gate_ways/{}/diagnostics/ping_ios".format(output["gate_ways"][x]["id"]), headers=headers)
             output_gw = r_gw.json()
-            jobs[x] = [output_gw["job_id"],output["gate_ways"][x]["name"]]
-            print("Sending ping to gateway {}".format(x))
+            try:
+                jobs[x] = [output_gw["job_id"], output["gate_ways"][x]["name"]]
+                print("Sending ping to gateway {}".format(x))
+            except:
+                print("Gateway error: Can't create job.")
         #wait for the responses of the gateway
         print("Please wait 30 seconds for responses...")
         time.sleep(30)
